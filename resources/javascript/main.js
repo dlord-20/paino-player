@@ -1,15 +1,24 @@
 // The keys and notes variables store the piano keys
-const keys = ['c-key', 'd-key', 'e-key', 'f-key', 'g-key', 'a-key', 'b-key', 'high-c-key', 'c-sharp-key', 'd-sharp-key', 'f-sharp-key', 'g-sharp-key', 'a-sharp-key'];
+const keys = ['c-key', 'd-key', 'e-key', 'f-key', 'g-key', 'a-key', 'b-key', 'high-c-key', 'c-sharp-key', 'd-sharp-key', 
+'f-sharp-key', 'g-sharp-key', 'a-sharp-key'];
 const notes = [];
 keys.forEach(function(key){
   notes.push(document.getElementById(key));
 })
 
 // Write named functions that change the color of the keys below
+keyPlay = event => {
+    event.target.style.backgroungColor = 'gray';
+}
 
+keyReturn = event => {
+    event.target.style.backgroundColor ='';
+}
 
 // Write a named function with event handler properties
-
+note = () => {
+    note.onmousedown = keyPlay;
+}
 
 // Write a loop that runs the array elements through the function
 
@@ -41,7 +50,7 @@ startOver.hidden= true;
 startOver.onclick = function() {
   nextOne.hidden = false;
   startOver.hidden = true;
-   document.getElementById('word-one').innerHTML = 'HAP-';
+  document.getElementById('word-one').innerHTML = 'HAP-';
   document.getElementById('letter-note-one').innerHTML = 'G';
   document.getElementById('word-two').innerHTML = 'PY';
   document.getElementById('letter-note-two').innerHTML = 'G';
